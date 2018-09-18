@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebApplication.Models.TripPath>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Résumé des données saisies</h2>
+
+<p>
+    @Html.ActionLink("Ajouter un itinéraire", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DestinationAirport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartureAirport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Airplane)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Distance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightTime)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DestinationAirport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartureAirport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Airplane)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Distance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightTime)
+        </td>
+    </tr>
+    }
+
+</table>
